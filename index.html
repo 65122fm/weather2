@@ -1,0 +1,158 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Weather App</title>
+      <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+      <div class="container">
+        <header>
+          <div class="mode-switch">
+            <div id="switcher">
+              <div class="passive" id="circle"></div>
+            </div>
+            <span id="switcher-label">Light Mode</span>
+          </div>
+          <div class="search-bar">
+            <button id="searchBtn"><i class="fa-solid"><img src="./image/search 1.png" alt=""></i></button>
+            <input id="searchInp" type="text" placeholder="Search for your preferred city..." />
+            <div id="weatherData"></div>
+          </div>
+          <button class="current-location">
+            <i class="fas fa-map-marker-alt">Current Location</i>
+          </button>
+        </header>
+        <main>
+          <div class="card current-weather">
+            <div></div>
+            <h2 id="city-name">Athens</h2>
+            <div class="time">
+              <span id="current-time">09:03</span>
+              <span class="date">Thursday, 31 Aug</span>
+            </div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="card weather-details">
+            <div class="column-1">
+              <div class="temperature">
+                <span class="current-temp">24°C</span>
+                <span class="feels-like">Feels like: 22°C</span>
+              </div>
+              <div class="sun-times">
+                <div class="sunRise">
+                  <img src="image/darkSunRise.png" alt="" />
+                  <div>
+                    <span>Sunrise</span>
+                    <span id="sunRiseTime">06:37 AM</span>
+                  </div>
+                </div>
+                <div class="sunSet">
+                  <img src="./image/darkSunSet.png" alt="" />
+                  <div>
+                    <span>Sunset</span>
+                    <span id="sunSetTime">20:37 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="condition">
+              <div></div>
+              <i class="fa-sun"><img id="fa-weather" src="./image/sun.png" alt=""></i>
+              <span id="weather-main">Sunny</span>
+            </div>
+            <div class="other-details">
+              <div class="detail">
+                <i class="fa-wind"><img src="./image/w/humidity 1.png" alt=""></i>
+                <span>41%</span>
+                <p>Humidity</p>
+              </div>
+              <div class="detail">
+                <i class="fa-wind"><img src="./image/w/wind 1.png" alt=""></i>
+                <span>2km/h</span>
+                <p>Wind Speed</p>
+              </div>
+              <div class="detail">
+                <i class="fa-wind"><img src="./image/w/pressure-white 1.png" alt=""></i>
+                <span>997hPa</span>
+                <p>Pressure</p>
+              </div>
+              <div class="detail">
+                <i class="fa-wind"><img src="./image/w/uv-white 1.png" alt=""></i>
+                <span>8</span>
+                <p>UV</p>
+              </div>
+            </div>
+          </div>
+          <div class="card forecast">
+            <h3 id="fiveDaysForecast">5 Days Forecast:</h3>
+            <ul>
+              <li class="fiveDaysWeather">
+                <i class="fas fa-cloud-rain"><img class="fiveDaysImage"  src="./image/Weather Dashboard - White/clouds 1.png" alt=""></i>
+                <span class="airTemp">20°C</span>
+                <p class="monthDay">Friday, 1 Sep</p>
+              </li>
+              <li>
+                <i class="fas fa-cloud-sun"><img class="fiveDaysImage" src="./image/Weather Dashboard - White/clouds 2-1.png" alt=""></i>
+                <span class="airTemp">22°C</span>
+                <p class="monthDay">Saturday, 2 Sep</p>
+              </li>
+              <li>
+                <i class="fas fa-sun"> <img class="fiveDaysImage" src="./image/Weather Dashboard - White/clouds 2.png" alt="" /></i>
+                <span class="airTemp">27°C</span>
+                <p class="monthDay">Sunday, 3 Sep</p>
+              </li>
+              <li>
+                <i class="fas fa-cloud"><img class="fiveDaysImage" src="./image/Weather Dashboard - White/drizzle 1.png" alt=""></i>
+                <span class="airTemp">18°C</span>
+                <p class="monthDay">Monday, 4 Sep</p>
+              </li>
+              <li>
+                <i class="fas fa-cloud-showers-heavy"><img class="fiveDaysImage" src="./image/Weather Dashboard - White/mist 1.png" alt=""></i>
+                <span class="airTemp">16°C</span>
+                <p class="monthDay">Tuesday, 5 Sep</p>
+              </li>
+            </ul>
+          </div>
+          <div class="card hourly-forecast">
+            <h3 id="hourlyForecast">Hourly Forecast:</h3>
+            <div class="hourly-items">
+              <div class="hourly-item first">
+                <span class="hourlyClock">12:00</span>
+                <i class="fas fa-sun"><img class="HourlyIcon" src="./image/Weather Dashboard - White/clouds 1.png" alt=""></i>
+                <span class="hourlyTemp">26°C</span>
+                <span class="hourlyWindSpeed">3km/h</span>
+              </div>
+              <div class="hourly-item second">
+                <span class="hourlyClock">15:00</span>
+                <i class="fas fa-sun"><img class="HourlyIcon" src="./image/Weather Dashboard - White/clouds 2-1.png" alt=""></i>
+                <span class="hourlyTemp">27°C</span>
+                <span class="hourlyWindSpeed">2km/h</span>
+              </div>
+              <div class="hourly-item third">
+                <span class="hourlyClock">18:00</span>
+                <i class="fas fa-cloud-sun"><img class="HourlyIcon" src="./image/Weather Dashboard - White/clouds 2.png" alt=""></i>
+                <span class="hourlyTemp">27°C</span>
+                <span class="hourlyWindSpeed">2km/h</span>
+              </div>
+              <div class="hourly-item fourth">
+                <span class="hourlyClock">21:00</span>
+                <i class="fas fa-cloud"><img class="HourlyIcon" src="./image/Weather Dashboard - White/drizzle 1.png" alt=""></i>
+                <span class="hourlyTemp">26°C</span>
+                <span class="hourlyWindSpeed">3km/h</span>
+              </div>
+              <div class="hourly-item fifth">
+                <span class="hourlyClock">00:00</span>
+                <i class="fas fa-cloud-rain"><img class="HourlyIcon" src="./image/Weather Dashboard - White/mist 1.png" alt=""></i>
+                <span class="hourlyTemp">22°C</span>
+                <span class="hourlyWindSpeed">3km/h</span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <script src="console.js"></script>
+    </body>
+  </html>
