@@ -20,10 +20,10 @@ const fiveDaysForecast = document.getElementById('fiveDaysForecast');
 const hourlyForecast = document.getElementById('hourlyForecast');
 const hourlyItem = document.querySelectorAll('.hourly-item');
 for (let n=0 ; n<3 ;n++) {  
-    hourlyItem[n].style.backgroundColor = '#F88508'
+    hourlyItem[n].style.backgroundImage = 'linear-gradient(170.72deg, #F88508 -12.41%, rgba(246, 250, 217, 0) 163.32%)'
     }
 for (let m=0 ; m<2 ;m++) {  
-    hourlyItem[m+3].style.backgroundColor = '#443D64'
+    hourlyItem[m+3].style.backgroundImage = 'linear-gradient(173.7deg, rgb(92 78 156) -15.92%, rgba(101, 130, 198, 0) 192.45%)'
     }
 
 switchButton.addEventListener('click', () => {
@@ -33,8 +33,11 @@ switchButton.addEventListener('click', () => {
         document.body.classList.add('dark-mode');
         document.body.classList.remove('light-mode');
         switchLabel.textContent = 'Dark Mode';
-        for (let a=0 ; a<5 ;a++) {  
+        for (let a=0 ; a<5 ;a++) { 
+
             hourlyItem[a].style.backgroundColor = 'rgba(55, 54, 54, 1)'
+            hourlyItem[a].style.backgroundImage = 'none'
+
         }
         
         switcher.style.backgroundColor = 'black'
@@ -55,11 +58,14 @@ switchButton.addEventListener('click', () => {
         fiveDaysForecast.style.color = 'black'
         hourlyForecast.style.color = 'black'
         for (let n=0 ; n<3 ;n++) {  
-            hourlyItem[n].style.backgroundColor = '#F88508'
-        }
+            hourlyItem[n].style.backgroundColor ='white'
+            hourlyItem[n].style.backgroundImage = 'linear-gradient(170.72deg, #F88508 -12.41%, rgba(246, 250, 217, 0) 163.32%)'
+            }
         for (let m=0 ; m<2 ;m++) {  
-            hourlyItem[m+3].style.backgroundColor = '#443D64'
-        }
+
+            hourlyItem[m+3].style.backgroundColor = 'white'
+            hourlyItem[m+3].style.backgroundImage = 'linear-gradient(173.7deg, rgb(92 78 156) -15.92%, rgba(101, 130, 198, 0) 192.45%)'
+            }
         
         
         circle.style.transform = 'translateX(0px) translateY(-10px)'
@@ -161,7 +167,9 @@ async function fetchWeatherForecastByCoordinates(latitude, longitude) {
         const data1 = await response.json();
 
         const iconCode = data1.list[0].weather[0].icon;
-        const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+        const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.jpeg`;
+        iconUrl.style.imageRendering = 'crisp-edges'; // Yüksək keyfiyyətli və kəskin görüntü üçün
+        iconUrl.style.imageRendering = 'pixelated'; // Piksel şəklində görüntü üçün        
         weatherImage.src = iconUrl;
 
         const date1 = data1.list[0].dt_txt;
